@@ -1,0 +1,56 @@
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<link rel="stylesheet" href="resources/css/subject_managment.css">
+<html>
+<head>
+</head>
+<body>
+
+	<div class="sbj_managment">
+
+		<form action="controller" method="post">
+			<input type="hidden" name="command" value="subjectManagment" /> <input
+				type="hidden" name="operation" value="create" /> <input type="text"
+				name="subjectName" placeholder="<fmt:message key='subject_managment_jspf.subject_name' />" />
+			<hr>
+			<button class="savebtn" type="submit"><fmt:message key='subject_managment_jspf.create' /></button>
+
+		</form>
+
+		<c:choose>
+			<c:when test="${fn:length(subjectList) == 0}">No students</c:when>
+
+			<c:otherwise>
+
+				<table id="subjectTable">
+					<thead>
+						<tr>
+							<th><fmt:message key='subject_managment_jspf.subjcet' /></th>
+							<th><fmt:message key='subject_managment_jspf.action' /></th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<c:forEach var="subject" items="${subjectList}">
+
+							<tr>
+								<td>${subject.name }</td>
+								<td><form action="controller" method="post">
+										<input type="hidden" name="command" value="subjectManagment" />
+										<input type="hidden" name="operation" value="delete" /> <input
+											type="hidden" name="subjectId" value=${subject.id } />
+										<button class="savebtn" value="submit">
+											<fmt:message key='subject_managment_jspf.delete' />
+										</button>
+									</form></td>
+							</tr>
+
+						</c:forEach>
+
+					</tbody>
+				</table>
+			</c:otherwise>
+		</c:choose>
+	</div>
+</body>
+</html>

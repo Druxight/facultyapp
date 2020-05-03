@@ -1,0 +1,57 @@
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<link rel="stylesheet" href="resources/css/profile.css">
+<html>
+<head>
+</head>
+
+<input type="hidden" name="command" value="blockUser" />
+<table id="mainTable">
+
+	<tr>
+		<th>Name</th>
+		<th>Action</th>
+	</tr>
+
+	<c:forEach var="user" items="${userList}">
+
+		<tr>
+			<td>${user.firstName}&nbsp${user.lastName}</td>
+			<td><c:choose>
+					<c:when test="${user.roleId == 3}">
+						<form action="controller" method="post">
+							<input type="hidden" name="command" value="blockUser" /> <input
+								type="hidden" name="newRole" value="student" />
+							<button class="managebtn" type="submit" name="userId"
+								value="${user.id }">
+								<fmt:message key='block_user_jspf.button.unblock_student' />
+							</button>
+						</form>
+						<form action="controller" method="post">
+							<input type="hidden" name="command" value="blockUser" /> <input
+								type="hidden" name="newRole" value="professor" />
+							<button class="managebtn" type="submit" name="userId"
+								value="${user.id }">
+								<fmt:message key='block_user_jspf.button.unblock_professor' />
+							</button>
+						</form>
+					</c:when>
+					<c:otherwise>
+						<form action="controller" method="post">
+							<input type="hidden" name="command" value="blockUser" />
+							<button class="managebtn" type="submit" name="userId"
+								value="${user.id }">
+								<fmt:message key='block_user_jspf.button.block' />
+							</button>
+						</form>
+					</c:otherwise>
+				</c:choose></td>
+		</tr>
+
+	</c:forEach>
+</table>
+
+
+
+</body>
+</html>

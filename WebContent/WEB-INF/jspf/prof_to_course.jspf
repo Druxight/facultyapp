@@ -1,0 +1,38 @@
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<link rel="stylesheet" href="resources/css/course-to-professor.css">
+<html>
+<head>
+<title>Course managment</title>
+</head>
+<body>
+
+	<form action="controller" method="post">
+		<input type="hidden" name="command" value="professorToCourse">
+		<div class=form>
+		
+				<a><fmt:message
+					key='prof_to_course_jspf.select_course' /></a>
+			<span class="custom-dropdown big"> <select name="courseId">
+					<c:forEach var="course" items="${courseList}">
+						<option value="${course.id }">${course.name}&nbsp|&nbspStart:&nbsp${course.startDate
+							}&nbsp|&nbspEnd:&nbsp${course.endDate }</option>
+					</c:forEach>
+			</select>
+			</span>
+			
+			<a><fmt:message
+					key='prof_to_course_jspf.select_professor' /></a>
+			 <span class="custom-dropdown big"> <select name="professorId">
+					<c:forEach var="prof" items="${professorList}">
+						<option value="${prof.id }">${prof.firstName}&nbsp${prof.lastName
+							}</option>
+					</c:forEach>
+			</select>
+			</span>
+			<button type="submit">Save</button>
+		</div>
+
+	</form>
+</body>
+</html>

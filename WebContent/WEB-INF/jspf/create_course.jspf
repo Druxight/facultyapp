@@ -1,0 +1,41 @@
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<link rel="stylesheet" href="resources/css/update-course.css">
+<html>
+<head>
+</head>
+<body>
+
+
+	<div class="form">
+		<form action="controller" method="post">
+			<input type="hidden" name="command" value="courseCommand" /> <input
+				type="hidden" name="operation" value="create" /> <a><fmt:message
+					key='create_course_jspf.form.a.name' /></a> <input type="text"
+				name="courseName" /> <a><fmt:message
+					key='create_course_jspf.form.a.start' /></a><input type="date"
+				name="startDate" /> <a><fmt:message
+					key='create_course_jspf.form.a.finish' /></a><input type="date"
+				name="endDate" /> <a><fmt:message
+					key='create_course_jspf.form.a.subject' /></a> <span
+				class="custom-dropdown"> <select name="subjectId">
+					<c:forEach var="subject" items="${subjectList}">
+						<option value="${subject.id }">${subject.name}</option>
+					</c:forEach>
+			</select>
+			</span> <a> <fmt:message key='create_course_jspf.form.a.professor' />
+			</a> <span class="custom-dropdown big"> <select name="professorId">
+					<c:forEach var="professor" items="${professorList}">
+						<option value="${professor.id }">${professor.firstName}&nbsp${professor.lastName
+							}</option>
+					</c:forEach>
+			</select>
+			</span>
+			<hr>
+			<button type="submit">
+				<fmt:message key='create_course_jspf.form.button.create' />
+			</button>
+		</form>
+	</div>
+</body>
+</html>

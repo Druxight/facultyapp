@@ -1,0 +1,37 @@
+<%@ page import="ua.nure.malyshevskyi.SummaryTask4.db.Role"%>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link rel="stylesheet" href="resources/css/header.css">
+<html>
+<head>
+</head>
+<body>
+	<div class="topnav" id="header">
+		<c:choose>
+			<c:when test="${not empty user}">
+				<a href="controller?command=profile" class="active"><img
+					src="resources/images/profile-icon.png">${user.firstName }</a>
+			</c:when>
+			<c:otherwise>
+				<a href="controller?command=login" class="active"><fmt:message
+					key='header_jspf.login' /></a>
+			</c:otherwise>
+		</c:choose>
+		<a href="controller?command=electives"><fmt:message
+					key='header_jspf.electives' /></a>
+		<div class="topnav-right">
+
+			<c:if test="${not empty user}">
+				<a href="controller?command=logout"><fmt:message
+					key='header_jspf.logout' /></a>
+			</c:if>
+
+		</div>
+	</div>
+	<form class="btnform" action="changeLocale.jsp" method="post">
+		<c:forEach items="${applicationScope.locales}" var="locale">
+			<input type="submit" name="locale" value="${locale.key }" />
+		</c:forEach>
+	</form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* HEADER */
+
+.topnav {
+	position: relative;
+	background-color: #005b7c;
+	overflow: hidden;
+}
+
+.topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a:hover {
+	background-color: #d5d1ca;
+	color: black;
+}
+
+.topnav a.active {
+	background-color: #01bcc6;
+	color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+	display: none;
+}
+
+.topnav-right {
+	float: right;
+	display:flex;
+}
+
+img {
+	width: 16px;
+	height: auto;
+}
+
+.btnform{
+	float:right;
+}

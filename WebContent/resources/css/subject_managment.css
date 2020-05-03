@@ -1,0 +1,64 @@
+.savebtn {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #008eab;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+#subjectTable {
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
+}
+
+#subjectTable td, #content th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#subjectTable tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#subjectTable tr:hover {
+	background-color: #ddd;
+}
+
+#subjectTable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #008eab;
+	color: white;
+	border: 1px solid black;
+}
+
+.sbj_managment input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.sbj_managment{
+	float:left;
+	width: 600px;
+	height: auto;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
+		rgba(0, 0, 0, 0.24);
+	margin: 5px;
+	background: #FFFFFF;
+}

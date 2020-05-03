@@ -1,0 +1,259 @@
+div.wrapper {
+	width: 100%;
+}
+
+div.left_block {
+	float: left;
+	width: 300px;
+	margin: 5px;
+}
+
+div.right_block {
+	float: left;
+	height: 500px;
+	width: 650px;
+	margin: 5px;
+}
+
+div.client_right_block {
+	float: left;
+	width: 75%;
+	margin: 5px;
+}
+
+div.course_to_prof {
+	float: left;
+	height: 500px;
+	width: 650px;
+	margin: 5px;
+}
+
+div.create_course {
+	float: left;
+	height: 800px;
+	width: 650px;
+	margin: 5px;
+}
+
+.courseinf{
+	margin: 5px;
+	background: #FFFFFF;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
+		rgba(0, 0, 0, 0.24);
+		width: 40%;
+	 border: 1px solid #d5d1ca;
+  border-radius: 5px 5px 80px 5px;
+}
+.courseinf form{
+	 margin:right;
+}
+.cdata{
+	margin: 5px;
+}
+
+.courseinf p{
+	 margin-top: 0.3em; 
+    margin-bottom: 0.3em;
+}
+
+#cname{
+	color: #005b7c;
+	font-size:x-large;
+	font-weight:bold;
+}
+
+.form {
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
+		rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.form button {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #008eab;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: white;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+.form img {
+	width: 80%;
+	border-image: 2px;
+}
+
+a {
+	float: center;
+}
+
+.fieldName {
+	float: left;
+}
+
+.form button:hover, .form button:active, .form button:focus {
+	background: #01bcc6;
+}
+
+body {
+	background: #eeeeee;
+	font-family: "Roboto", sans-serif;
+}
+
+.message {
+	font-size: 20px;
+}
+
+#mainTable {
+	position: relative;
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
+	margin: 5px;
+}
+
+#mainTable td, #content th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#mainTable tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#mainTable tr:hover {
+	background-color: #ddd;
+}
+
+#mainTable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #008eab;
+	color: white;
+	border: 1px solid black;
+}
+
+.managebtn {
+	background-color: #008eab;
+	border: 1px solid black;
+	color: white;
+	padding: 12px 30px;
+	cursor: pointer;
+	float: left;
+}
+
+.managebtn:hover{
+	background-color: #01bcc6;
+}
+.dropoutbtn{
+	background-color: #008eab;
+	border: 1px  solid black;
+	border-radius: 30px 30px 30px 30px;
+	color: white;
+	padding: 11px 30px;
+	cursor: pointer;
+	float: right;
+}
+
+.dropoutbtn:hover{
+	background-color: #01bcc6;
+}
+.savebtn {
+	background-color: #008eab;
+	border: 1px solid black;
+	color: white;
+	padding: 12px 30px;
+	cursor: pointer;
+	float: right;
+}
+.savebtn:hover{
+	background-color: #01bcc6;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 170px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #acc6aa;
+}
+
+.dropbtn {
+	background-color: #71a0a5;
+	color: white;
+	padding: 13px;
+	font-size: 13px;
+	border: none;
+}
+
+.table-name {
+	color: black;
+	font-size: 20px;
+}
+#mark{
+	float:right;
+	font-size:large;
+}
+
+input[type=text] {
+	float: left;
+	width: 200px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	width: 100px;
+}
+
+input[type=text] {
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 1px;
+	font-size: 14px;
+	background-color: white;
+	background-repeat: no-repeat;
+	padding: 12px 12px 12px 10px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+}

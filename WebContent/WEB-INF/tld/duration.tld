@@ -1,0 +1,16 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>DurationTLD</short-name>
+
+	<tag>
+		<name>duration</name>
+		<tag-class>ua.nure.malyshevskyi.SummaryTask4.tag.DurationTag
+		</tag-class>
+		 <attribute>
+        <name>course</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue> 
+    </attribute>
+	</tag>
+</taglib>
