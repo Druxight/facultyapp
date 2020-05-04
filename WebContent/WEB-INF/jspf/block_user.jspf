@@ -9,8 +9,8 @@
 <table id="mainTable">
 
 	<tr>
-		<th>Name</th>
-		<th>Action</th>
+		<th><fmt:message key='block_user_jspf.name' /></th>
+		<th><fmt:message key='block_user_jspf.action' /></th>
 	</tr>
 
 	<c:forEach var="user" items="${userList}">

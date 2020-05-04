@@ -18,15 +18,15 @@ import ua.nure.malyshevskyi.SummaryTask4.web.command.Command;
 import ua.nure.malyshevskyi.SummaryTask4.web.command.utils.AdminUtils;
 
 /**
- * Subjcet managment. Class can create and delete certain subject. Gets the
+ * Subject management. Class can create and delete certain subject. Gets the
  * action command from the request.
  */
 
-public class SubjectManagmentCommand extends Command {
+public class SubjectManagementCommand extends Command {
 
 	private static final long serialVersionUID = -9144145323068277650L;
 
-	private static final Logger LOG = Logger.getLogger(SubjectManagmentCommand.class);
+	private static final Logger LOG = Logger.getLogger(SubjectManagementCommand.class);
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
@@ -43,14 +43,16 @@ public class SubjectManagmentCommand extends Command {
 			LOG.trace("Subject list obtained from db: subjectList --> " + subjectList);
 			request.setAttribute("subjectList", subjectList);
 			LOG.trace("Set request attribute: subjectList --> " + subjectList);
-			request.setAttribute("action", "subjectManagment");
-			LOG.trace("Set request attrubute: action --> subjectManagment");
+			request.setAttribute("action", "subjectManagement");
+			LOG.trace("Set request attrubute: action --> subjectManagement");
 			return Path.PAGE_ADMIN;
 		}
-
+		
+		AdminUtils.checkAccess(request);
+		
 		String operation = request.getParameter("operation");
 		LOG.trace("Request parameter: operation --> " + operation);
-
+		
 		switch (operation) {
 		case "create":
 			String subjectName = request.getParameter("subjectName");
@@ -71,7 +73,7 @@ public class SubjectManagmentCommand extends Command {
 			break;
 		}
 
-		LOG.trace("Command finished");
+		LOG.debug("Command finished");
 
 		return Path.PAGE_ADMIN;
 	}

@@ -8,7 +8,8 @@ import org.apache.log4j.Logger;
 import ua.nure.malyshevskyi.SummaryTask4.web.command.admin.BlockUserCommand;
 import ua.nure.malyshevskyi.SummaryTask4.web.command.admin.CourseManagmentCommand;
 import ua.nure.malyshevskyi.SummaryTask4.web.command.admin.SetProfToCourseCommand;
-import ua.nure.malyshevskyi.SummaryTask4.web.command.admin.SubjectManagmentCommand;
+import ua.nure.malyshevskyi.SummaryTask4.web.command.admin.SetRoleCommand;
+import ua.nure.malyshevskyi.SummaryTask4.web.command.admin.SubjectManagementCommand;
 import ua.nure.malyshevskyi.SummaryTask4.web.command.auth.LoginCommand;
 import ua.nure.malyshevskyi.SummaryTask4.web.command.auth.LogoutCommand;
 import ua.nure.malyshevskyi.SummaryTask4.web.command.auth.RegisterCommand;
@@ -29,6 +30,7 @@ public class CommandContainer {
 	private static Map<String, Command> commands = new TreeMap<String, Command>();
 
 	static {
+		
 		commands.put("login", new LoginCommand());
 		commands.put("register", new RegisterCommand());
 		commands.put("electives", new ElectiveCommand());
@@ -42,10 +44,11 @@ public class CommandContainer {
 		commands.put("logout", new LogoutCommand());
 		commands.put("dropOut", new DropOutCommand());
 		commands.put("professorToCourse", new SetProfToCourseCommand());
-		commands.put("subjectManagment", new SubjectManagmentCommand());
+		commands.put("subjectManagment", new SubjectManagementCommand());
 		commands.put("courseCommand", new CourseManagmentCommand());
 		commands.put("blockUser", new BlockUserCommand());
-
+		commands.put("setRole", new SetRoleCommand());
+		
 		LOG.debug("Command container was successfully initialized");
 		LOG.trace("Number of commands --> " + commands.size());
 	}

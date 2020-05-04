@@ -1,0 +1,96 @@
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<link rel="stylesheet" href="resources/css/profile.css">
+<html>
+<head>
+</head>
+
+<input type="hidden" name="command" value="blockUser" />
+<table id="mainTable">
+
+	<tr>
+		<th><fmt:message key='set_role_jspf.name' /></th>
+		<th><fmt:message key='set_role_jspf.role' /></th>
+	</tr>
+
+	<c:forEach var="user" items="${userList}">
+
+		<tr>
+			<td>${user.firstName}&nbsp${user.lastName}&nbsp<c:choose>
+					<c:when test="${user.roleId == 0 }">[<fmt:message
+							key='set_role_jspf.admin' />]</c:when>
+					<c:when test="${user.roleId == 1 }">[<fmt:message
+							key='set_role_jspf.professor' />]</c:when>
+					<c:when test="${user.roleId == 2 }">[<fmt:message
+							key='set_role_jspf.student' />]</c:when>
+					<c:when test="${user.roleId == 3 }"><[<fmt:message
+							key='set_role_jspf.blocked' />]</c:when>
+				</c:choose>
+			</td>
+			<td><c:choose>
+					<c:when test="${user.roleId == 1}">
+						<form action="controller" method="post">
+							<input type="hidden" name="command" value="setRole" /> <input
+								type="hidden" name="newRole" value="student" />
+							<button class="managebtn" type="submit" name="userId"
+								value="${user.id }">
+								<fmt:message key='set_role_jspf.student' />
+							</button>
+						</form>
+						<form action="controller" method="post">
+							<input type="hidden" name="command" value="setRole" /> <input
+								type="hidden" name="newRole" value="admin" />
+							<button class="managebtn" type="submit" name="userId"
+								value="${user.id }">
+								<fmt:message key='set_role_jspf.admin' />
+							</button>
+						</form>
+					</c:when>
+					
+					
+					<c:when test="${user.roleId == 2}">
+						<form action="controller" method="post">
+							<input type="hidden" name="command" value="setRole" /> <input
+								type="hidden" name="newRole" value="professor" />
+							<button class="managebtn" type="submit" name="userId"
+								value="${user.id }">
+								<fmt:message key='set_role_jspf.professor' />
+							</button>
+						</form>
+						<form action="controller" method="post">
+							<input type="hidden" name="command" value="setRole" /> <input
+								type="hidden" name="newRole" value="admin" />
+							<button class="managebtn" type="submit" name="userId"
+								value="${user.id }">
+								<fmt:message key='set_role_jspf.admin' />
+							</button>
+						</form>
+					</c:when>
+					<c:otherwise>
+						<form action="controller" method="post">
+							<input type="hidden" name="command" value="setRole" /> <input
+								type="hidden" name="newRole" value="professor" />
+							<button class="managebtn" type="submit" name="userId"
+								value="${user.id }">
+								<fmt:message key='set_role_jspf.professor' />
+							</button>
+						</form>
+						<form action="controller" method="post">
+							<input type="hidden" name="command" value="setRole" /> <input
+								type="hidden" name="newRole" value="student" />
+							<button class="managebtn" type="submit" name="userId"
+								value="${user.id }">
+								<fmt:message key='set_role_jspf.student' />
+							</button>
+						</form>
+					</c:otherwise>
+				</c:choose></td>
+		</tr>
+
+	</c:forEach>
+</table>
+
+
+
+</body>
+</html>

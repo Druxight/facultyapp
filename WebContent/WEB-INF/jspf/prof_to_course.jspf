@@ -30,7 +30,8 @@
 					</c:forEach>
 			</select>
 			</span>
-			<button type="submit">Save</button>
+			<button type="submit"><fmt:message
+					key='prof_to_course_jspf.save' /></button>
 		</div>
 
 	</form>

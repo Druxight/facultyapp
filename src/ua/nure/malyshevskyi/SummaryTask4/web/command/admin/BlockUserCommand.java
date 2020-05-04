@@ -19,9 +19,9 @@ import ua.nure.malyshevskyi.SummaryTask4.web.command.Command;
 import ua.nure.malyshevskyi.SummaryTask4.web.command.utils.AdminUtils;
 
 /**
- * Сommand intended for blocking and unblocking a user. During unlock process,
+ * Command intended for blocking and unblocking a user. During unlock process,
  * the administrator installs user role into userRole parameter. In case of GET
- * method obtain required info for creating jspf page and puts everything in
+ * method obtain required info for creating jspf page and puts everything into
  * request.
  */
 
@@ -69,16 +69,21 @@ public class BlockUserCommand extends Command {
 		LOG.trace("User role -->" + userRole);
 
 		if (userRole != Role.BLOCKED) {
-
 			user.setRoleId(Role.BLOCKED.ordinal());
 			LOG.trace("User role set to BLOCKED: user --> " + user);
 		} else {
-			if ("student".equals(newRole)) {
+			switch (newRole) {
+			case "student":
 				user.setRoleId(Role.STUDENT.ordinal());
 				LOG.trace("User role set to STUDENT: user --> " + user);
-			} else if ("professor".equals(newRole)) {
+				break;
+			case "professor":
 				user.setRoleId(Role.PROFESSOR.ordinal());
 				LOG.trace("User role set to PROFESSOR: user --> " + user);
+				break;
+			default:
+				LOG.trace("Role has not been changed");
+				break;
 			}
 		}
 

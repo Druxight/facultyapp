@@ -21,10 +21,10 @@
 				<img src="resources/images/user.png">
 				<p>@${user.login }</p>
 				<p class="fieldName">
-					<fmt:message key = 'admin_jsp.form.p.name'/>:<a>${user.firstName }&nbsp${user.lastName }</a>
+					<a><fmt:message key = 'admin_jsp.form.p.name'/>:${user.firstName }&nbsp${user.lastName }</a>
 				</p>
 				<p class="fieldName">
-					<fmt:message key = 'admin_jsp.form.p.email'/>: <a>${user.email }</a>
+					<a><fmt:message key = 'admin_jsp.form.p.email'/>: ${user.email }</a>
 				</p>
 				<form action="controller" method="get">
 					<input type="hidden" name="command" value="editProfile" />
@@ -56,6 +56,11 @@
 					<button type="submit"><fmt:message key = 'admin_jsp.form.p.button.subject_managment'/></button>
 				</form>
 				
+				<form action="controller" method="get">
+					<input type="hidden" name="command" value="setRole" />
+					<button type="submit"><fmt:message key = 'admin_jsp.form.p.button.set_role'/></button>
+				</form>
+				
 			</div>
 
 		</div>
@@ -80,9 +85,15 @@
 			</div>
 		</c:when>
 		
-		<c:when test="${action eq 'subjectManagment'}">
+		<c:when test="${action eq 'subjectManagement'}">
 			<div class="subject_managment">
-				<%@ include file="/WEB-INF/jspf/subject_managment.jspf"%>
+				<%@ include file="/WEB-INF/jspf/subject_management.jspf"%>
+			</div>
+		</c:when>
+		
+		<c:when test="${action eq 'setRole'}">
+			<div class="set_role">
+				<%@ include file="/WEB-INF/jspf/set_role.jspf"%>
 			</div>
 		</c:when>
 		
